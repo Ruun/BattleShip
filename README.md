@@ -27,7 +27,7 @@ BattleShipZ is a Battleship game developed using JavaFX. Engage in classic naval
 2. **Run the JAR file** in your command line:
 
    ```bash
-   java --module-path "/path/to/javafx-sdk-22.0.1/lib" --add-modules javafx.controls,javafx.fxml -jar jarFileYouDownloaded.jar
+   java --module-path "/path/to/javafx-sdk-22.0.1/lib" --add-modules javafx.controls,javafx.fxml -jar JAPLabsSwing.jar
    ```
 
    Replace `/path/to/javafx-sdk-22.0.1/lib` with the actual path to your JavaFX SDK.
