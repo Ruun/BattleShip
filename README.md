@@ -17,4 +17,4 @@ BattleShip Game developed with javaFX
 
 
 
-#source for most of the server part:
+# source for most of the server part:
