@@ -17,6 +17,7 @@ BattleShipZ is a Battleship game developed using JavaFX. Engage in classic naval
 - **Swap Button**: Easily switch views between your board and the enemy's board, or modify the layout to display both boards side by side.
 - **In-Game Messaging**: Communicate with your opponent during the game.
 - **Game Stats**: Track your wins, losses, and other stats.
+- **Translation**: Translate between english/french (needs more work)
 - **Sound Effects**: Enjoy immersive game sounds, including background music, shooting, misses, wins, and losses.
 
 ## How to Run the Game
