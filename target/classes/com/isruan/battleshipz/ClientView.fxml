@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="721.0" prefWidth="788.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.isruan.battleshipz.Client.Controller.ClientViewController">
+
+   <top>
+      <VBox>
+         <MenuBar>
+            <Menu text="File">
+               <MenuItem text="Exit" onAction="#handleExit" />
+            </Menu>
+            <Menu text="Mute Options">
+               <CheckMenuItem text="Mute Game Music" onAction="#handleMuteMusic" />
+               <CheckMenuItem text="Mute Sound Effects" onAction="#handleMuteEffects" />
+            </Menu>
+            <Menu text="Help">
+               <MenuItem text="About" onAction="#showAbout" />
+               <MenuItem text="Help" onAction="#showHelp" />
+            </Menu>
+            <Menu text="Language">
+               <MenuItem text="English" onAction="#toggleLanguage" />
+            </Menu>
+            <Menu text="Network">
+               <MenuItem text="Server" onAction="#openServerPage" />
+               <MenuItem text="Client" onAction="#openClientPage" />
+            </Menu>
+            <Menu text="Back">
+               <MenuItem text="Main Page" onAction="#showMainPage" />
+            </Menu>
+         </MenuBar>
+
+         <HBox fx:id="HBoxBoards" alignment="CENTER" prefHeight="350.0" prefWidth="764.0" BorderPane.alignment="CENTER">
+            <children>
+               <StackPane fx:id="boardsStack" prefHeight="350.0" prefWidth="600.0">
+                  <VBox fx:id="VBoxMy" prefHeight="350.0" prefWidth="300.0" />
+                  <VBox fx:id="VBoxEnemy" prefHeight="350.0" prefWidth="300.0" />
+               </StackPane>
+               <VBox fx:id="VBoxControl" alignment="CENTER" prefHeight="350.0" prefWidth="130.0" spacing="15.0">
+                  <children>
+                     <Button fx:id="buttonOffer" mnemonicParsing="false" onAction="#sendOffer" prefHeight="22.0" prefWidth="127.0" text="Start game" />
+                     <RadioButton fx:id="radioReady" mnemonicParsing="false" text="Ready" />
+                     <VBox fx:id="sizeBox" spacing="10.0" alignment="CENTER">
+                        <children>
+                           <RadioButton fx:id="radio4" mnemonicParsing="false" text="4 squares" />
+                           <RadioButton fx:id="radio3" mnemonicParsing="false" text="3 squares" />
+                           <RadioButton fx:id="radio2" mnemonicParsing="false" text="2 squares" />
+                           <RadioButton fx:id="radio1" mnemonicParsing="false" text="1 square" />
+                        </children>
+                     </VBox>
+                     <ToggleButton fx:id="removeShip" mnemonicParsing="false" text="Remove Ship" />
+                     <Button fx:id="buttonGiveUp" mnemonicParsing="false" onAction="#giveUp" prefHeight="22.0" prefWidth="127.0" text="Give Up" />
+                     <Button fx:id="swapButton" mnemonicParsing="false" onAction="#swapBoards" prefHeight="22.0" prefWidth="127.0" text="Swap Boards" />
+                  </children>
+               </VBox>
+            </children>
+         </HBox>
+      </VBox>
+   </top>
+
+   <bottom>
+      <!-- The rest of your HBox and VBox for bottom -->
+      <HBox alignment="CENTER" prefHeight="302.0" prefWidth="730.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="options" alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="353.0" prefWidth="252.0" spacing="10.0">
+               <children>
+                  <!-- Options VBox content -->
+                  <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="19.0" prefWidth="252.0" text="Enter Your Name" textAlignment="CENTER">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="221.0">
+                     <children>
+                        <TextField fx:id="nickField" prefHeight="39.0" prefWidth="180.0">
+                           <font>
+                              <Font size="12.0" />
+                           </font></TextField>
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#logIn" prefHeight="38.0" prefWidth="70.0" text="Login">
+                           <font>
+                              <Font size="12.0" />
+                           </font></Button>
+                     </children>
+                  </HBox>
+                  <Label text="List of Game servers you can join">
+                     <font>
+                        <Font size="12.0" />
+                     </font></Label>
+                  <TextField fx:id="yourgameField" editable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="22.0" prefWidth="227.0">
+                     <font>
+                        <Font size="12.0" />
+                     </font></TextField>
+                  <Label text="List of Games">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="gamesCombo" prefHeight="21.0" prefWidth="224.0" />
+                  <Button fx:id="joinButton" mnemonicParsing="false" onAction="#joinGame" prefHeight="27.0" prefWidth="223.0" text="Join the game">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="createButton" mnemonicParsing="false" onAction="#createGame" prefHeight="27.0" prefWidth="223.0" text="Create a Game">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonDeleteGame" mnemonicParsing="false" onAction="#deleteGame" prefHeight="23.0" prefWidth="223.0" text="Delete game">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="exitButton" mnemonicParsing="false" onAction="#abandonGame" prefHeight="23.0" prefWidth="225.0" text="Leave the game">
+                     <font>
+                        <Font size="12.0" />
+                     </font>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox fx:id="chat" alignment="CENTER" prefHeight="308.0" prefWidth="431.0" spacing="20.0">
+               <children>
+                  <Label text="Game Status">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="infoArea" editable="false" prefHeight="53.0" prefWidth="431.0" wrapText="true" />
+                  <ListView fx:id="chatArea" prefHeight="200.0" prefWidth="200.0" />
+                  <Label text="Chat">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="35.0" prefWidth="400.0">
+                     <children>
+                        <TextField fx:id="chatField" prefHeight="35.0" prefWidth="360.0" />
+                        <Button fx:id="sendButton" mnemonicParsing="false" onAction="#sendChatMessage" prefHeight="35.0" prefWidth="75.0" text="Send" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
+

@@ -1,0 +1,42 @@
+.root {
+     -fx-padding: 10;
+}
+
+.button {
+    -fx-font-size: 12px;
+    -fx-background-radius: 5;
+    -fx-padding: 10 20;
+    -fx-border-radius: 5;
+    -fx-border-color: #0056b3;
+    -fx-border-width: 2;
+}
+
+.button:hover {
+    -fx-background-color: #005bb5;
+}
+
+.button:pressed {
+    -fx-background-color: #004494;
+}
+.showGameUI{
+-fx-padding: 10 20;
+}
+
+.label {
+    -fx-font-size: 14px;
+    -fx-padding: 5 10;
+}
+
+.menu-bar {
+    -fx-padding: 5;
+}
+
+.menu-item {
+    -fx-text-fill: white;
+    -fx-padding: 5 10;
+}
+
+.menu {
+
+    -fx-text-fill: white;
+}
